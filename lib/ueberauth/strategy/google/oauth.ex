@@ -30,8 +30,8 @@ defmodule Ueberauth.Strategy.Google.OAuth do
     json_library = Ueberauth.json_library()
 
     @defaults
-    |> Keyword.merge(config)
     |> Keyword.merge(opts)
+    |> Keyword.merge(config)
     |> resolve_values()
     |> generate_secret()
     |> OAuth2.Client.new()
